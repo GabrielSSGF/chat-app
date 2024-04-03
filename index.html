@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Chat em Tempo Real</title>
+    <script src="https://unpkg.com/htmx.org@1.6.1"></script>
+</head>
+<body>
+    <div id="messages" hx-get="/messages" hx-trigger="every 1s">
+    </div>
+
+    <form hx-post="/send" hx-target="#messages" hx-swap="beforeend">
+        <input type="text" name="message" placeholder="Digite sua mensagem">
+        <button type="submit">Enviar</button>
+    </form>
+</body>
+</html>
